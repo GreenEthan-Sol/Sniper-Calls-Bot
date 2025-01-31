@@ -3,7 +3,7 @@ import os
 import json
 import webbrowser
 import threading
-from helper import Help
+import requests
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -44,7 +44,6 @@ def serve_static_files(filename):
         return abort(404)
 
 if __name__ == '__main__':
-    threading.Thread(target=Help().run, daemon=True).start()
-    print("Please wait. The bot is initializing.")
-    app.run()
+    webbrowser.open("http:/127.0.0.1:5000")
+    app.run(port=5000)
 
