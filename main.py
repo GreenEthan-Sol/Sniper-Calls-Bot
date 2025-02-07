@@ -5,7 +5,6 @@ import webbrowser
 import threading
 import requests
 import warnings
-from helper import Help
 warnings.filterwarnings("ignore")
 
 app = Flask(__name__)
@@ -45,7 +44,6 @@ def serve_static_files(filename):
         return abort(404)
 
 if __name__ == '__main__':
-    print("Please wait. The bot is initializing.")
-    threading.Thread(target=Help().run, daemon=True).start()
+    webbrowser.open("http:/127.0.0.1:5000")
     app.run(port=5000)
 
